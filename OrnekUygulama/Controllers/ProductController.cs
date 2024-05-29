@@ -75,7 +75,7 @@ namespace OrnekUygulama.Controllers
 			//return getProductsresult;
 
 
-			//TUPLE KULLANARAK YAPIMI
+			//TUPLE KULLANMA YOLUYLA YAPIMI
 
 			var userProduct = (user, product);
 			ViewResult getProductsresult = View(userProduct);
