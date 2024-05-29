@@ -74,6 +74,7 @@ namespace OrnekUygulama.Controllers
 
 			//return getProductsresult;
 
+
 			//TUPLE KULLANARAK YAPIMI
 
 			var userProduct = (user, product);
