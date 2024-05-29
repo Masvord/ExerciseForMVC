@@ -129,20 +129,21 @@ namespace OrnekUygulama.Controllers
 
 
 
-		//public IActionResult GetTupleProduct() //Tuple İşlemleri
-		//{
+		public IActionResult GetTupleProduct(string tryID) //Tuple İşlemleri
+		{
 
-		//	(Product, User) tuple = (new Product(), new User());
-		//	return View(tuple);
-		//}
+			(Product, User) tuple = (new Product(), new User());
+			return View(tuple);
+		}
 
-		//[HttpPost]
-		//public IActionResult TupleProduct([Bind(Prefix = "Item1")] Product product, [Bind(Prefix = "Item2")] User user /*IFormCollection datas*/)
-		//{
+		[HttpPost]
+		public IActionResult TupleProduct([Bind(Prefix = "Item1")] Product product, [Bind(Prefix = "Item2")] User user /*IFormCollection datas*/)
+		{
 
-		//	ViewResult result = View();
-		//	return result;
-		//}
+			ViewResult result = View();
+			return result;
+		}
+
 
 
 

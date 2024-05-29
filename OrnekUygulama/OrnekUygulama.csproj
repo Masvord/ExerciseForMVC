@@ -54,7 +54,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Constraints\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
