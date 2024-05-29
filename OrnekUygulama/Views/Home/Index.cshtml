@@ -1,0 +1,17 @@
+﻿
+<html>
+	<head>
+		<title>First Try</title>
+	</head>
+
+	<body>
+		<h4>Welcome</h4>
+		
+		@await Component.InvokeAsync("Personeller", new {id = 5})
+		@*"await" anahtar kelimesi olmadan yapılan çağrıda,
+		bileşen çağrısı tamamlanmadan sayfa veya bileşenin render işlemi başlar ve bu nedenle istenilen çıktı elde edilemez. 
+		"await"" kullanarak yapılan çağrıda ise, bileşen çağrısının tamamlanmasını bekler ve sonra bileşenin çıktısını alır ve görüntüler.
+		Bu nedenle, @await Component.InvokeAsync("Personeller") kodunu kullanarak bileşen çağrısını asenkron olarak gerçekleştirmek, bileşenin tamamlanmasını bekleyerek doğru çıktının görüntülenmesini sağlar. *@
+		
+	</body>
+</html>

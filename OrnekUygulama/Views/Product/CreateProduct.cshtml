@@ -1,0 +1,19 @@
+﻿@{
+	Layout = null;
+}
+
+@model OrnekUygulama.Models.Product
+
+@* Burada da taghelper tanımlaması yapmadık çnükü viewImports içerisinde zaten tanımlandı *@
+
+<form asp-action="EditProduct" asp-controller="Product">
+	
+	<input type="number" asp-for="Id" placeholder="ID"/>
+
+	<input type="text" asp-for="ProductName" placeholder="Product Name"/>
+
+	<input type="number" asp-for="Quantity" placeholder="Quantity" class="btn btn-default"/>
+	
+	
+	<button>Ürün Ekle</button>
+</form>

@@ -1,0 +1,13 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model (OrnekUygulama.Models.Product p, OrnekUygulama.Models.User u)
+
+
+
+<form asp-action="TupleProduct", asp-controller="Product" method="post">
+
+	<input type="text" asp-for="p.ProductName" placeholder="Product Name"/>
+	<input type="text" asp-for="u.Name" placeholder="User Name" />
+	<button>Gönder</button>
+
+</form>

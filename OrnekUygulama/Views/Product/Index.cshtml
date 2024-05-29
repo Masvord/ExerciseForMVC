@@ -1,0 +1,42 @@
+﻿@* @model List<OrnekUygulama.Models.Product>
+
+<html>
+	<head>
+		<title>İlk GetProducts</title>
+	</head>
+
+	<body>
+		<ul>
+			@foreach(var product in Model)
+			{
+				<li>@product.ProductName, Stok Miktarı = @product.Quantity</li>
+			}
+		</ul>
+	</body>
+</html>
+
+MODEL BAZLI TAŞIMA SONU *@
+
+
+
+
+@* <ul>
+	@foreach (var product in ViewBag.products as List<OrnekUygulama.Models.Product>)
+	{
+		<li>@product.ProductName, Stoktaki Miktar = product.Quantity</li>
+	}
+</ul>
+
+Dynamic ViewBag Sonu *@
+
+
+
+
+@* <ul>
+	@foreach (var product in ViewData["products"] as List<OrnekUygulama.Models.Product>)
+	{
+		<li>@product.ProductName, Stoktaki Miktar = product.Quantity</li>
+	}
+</ul>
+
+Boxin ViewData sonu *@

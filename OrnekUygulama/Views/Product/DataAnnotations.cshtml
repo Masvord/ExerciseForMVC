@@ -1,0 +1,24 @@
+﻿@{
+	Layout = null;
+}
+
+
+@* @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 'e artık gerek yok çünkü _viewImports içerisinde tanımlandı. *@
+
+@model OrnekUygulama.Models.Product
+	<script src="~/wwwroot/jquery/jquery.min.js"></script>
+	<script src="~/wwwroot/jquery-validate/jquery.validate.min.js"></script>
+	<script src="~/wwwroot/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<div asp-validation-summary="All">
+
+</div>
+
+<form asp-controller="Product" , asp-action="DataAnnotations" , method="post">
+	<input type="text" asp-for="ProductName" placeholder="Product Name" />
+	<span asp-validation-for="ProductName"></span><br />
+
+	<input type="number" asp-for="Quantity" placeholder="Quantity" />
+	<span asp-validation-for="Quantity"></span><br />
+	<button>Gönder</button>
+</form>

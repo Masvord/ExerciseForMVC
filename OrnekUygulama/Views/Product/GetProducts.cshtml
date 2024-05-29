@@ -1,0 +1,25 @@
+﻿@{
+	Layout = null;
+}
+
+@* @model OrnekUygulama.Models.ViewModels.UserProduct
+
+<h3>@Model.product.ProductName</h3>
+<h3>@Model.user.Name</h3> 
+1.Yol bu şekilde gösterilebilir
+*@
+
+
+@* Tuple belirtimi bu şekildedir *@
+@model (OrnekUygulama.Models.User u, OrnekUygulama.Models.Product p) 
+<h3>@Model.p.Id</h3>
+<h3>@Model.u.Name</h3>
+
+@* Html.partial KULLANIMI *@
+<partial name="~/Views/Product/Partials/ListPartial.cshtml" />
+<h3>@Model.p.ProductName, &nbsp; Elimizdeki Miktar = @Model.p.Quantity</h3>
+
+
+@* @Html.Partial("~/Views/Product/Partials/ListPartial.cshtml") *@ 
+
+
