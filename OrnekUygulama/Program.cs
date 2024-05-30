@@ -1,5 +1,6 @@
 using FluentValidation.AspNetCore;
 using OrnekUygulama.Constraints;
+using OrnekUygulama.Handlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddFluentValidationAutoValidation();
 var app = builder.Build();
 
 
+app.UseStaticFiles(); //wwwroot dosyasýna eriþmek için gereklidir.
 
 //app.MapGet("/", () => "Hello World!"); //Default index çalýþmaz, hello world döndürür.
 
@@ -19,15 +21,13 @@ app.MapControllerRoute("DataAnnotations Yönlendirmesi", "DataAnnotations", new {
 app.MapControllerRoute("GetProduct Yönlendirmesi", "getProducts/{tryId:int:length(1)?}", new { controller = "product", action = "GetProducts" });
 app.MapControllerRoute("GetTupleProduct Yönlendirmesi", "GetTupleProduct/{tryId:custom?}", new { controller = "product", action = "GetTupleProduct" });
 
-
+//HANDLERS
+app.Map("example-route", new ExampleHandler().Handler());
+app.Map("image/{imageName}", new ImageHandler().Handler(builder.Environment.WebRootPath)); //image/{imageName}?h=...
 
 app.MapDefaultControllerRoute();
 
 app.UseHttpsRedirection();
-
-app.UseStaticFiles(); //wwwroot dosyasýna eriþmek için gereklidir.
-
-app.Map("example-route", new OrnekUygulama.Handlers.ExampleHandler().Handler());
 
 app.UseRouting();
 
