@@ -2,13 +2,27 @@ using FluentValidation.AspNetCore;
 using OrnekUygulama.Constraints;
 using OrnekUygulama.Extensions;
 using OrnekUygulama.Handlers;
+using OrnekUygulama.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(); //Sayfay refresh ettiðimizde deðiþikliði görürüz (LiveServer gibi).
 builder.Services.Configure<RouteOptions>(options => options.ConstraintMap.Add("custom", typeof(CustomConstraint))); //Custom constraint Ekleme Yapýsý
 builder.Services.AddFluentValidationAutoValidation();
+
+//DEPENDENCY INJECTION	
+//builder.Services.AddSingleton<Personel>();
+//Tek nesne üretilir.
+
+//builder.Services.AddScoped<Personel>();
+//Her requestte ayrý bir nesne üretilir.
+
+builder.Services.AddTransient<Personel>();
+//Her requestin ve içindeki istemciye farklý ayrý bir nesne üretilir.
+
+
+
 var app = builder.Build();
 
 
